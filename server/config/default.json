@@ -1,5 +1,5 @@
 {
   "serverPort": 5000,
   "dbUrl": "mongodb+srv://vasyl:Vasyl2002@cluster0.1s0to.mongodb.net/mern_drop_disk?retryWrites=true&w=majority",
-  "secretKey": "mern_drop_disk"
+  "secretKey": "mern-secket-key"
 }

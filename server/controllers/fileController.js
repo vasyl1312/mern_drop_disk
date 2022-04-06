@@ -65,11 +65,15 @@ class FileController {
       file.mv(path)
 
       const type = file.name.split('.').pop() //розділюємо шлях по крапках і з цього масиву берем останній елем
+      let filePath = file.name
+      if (parent) {
+        filePath = parent.path + '\\' + file.name
+      }
       const dbFile = new File({
         name: file.name,
         type,
         size: file.size,
-        path: parent?.path,
+        path: filePath,
         parent: parent?._id,
         user: user._id,
       })
@@ -96,6 +100,21 @@ class FileController {
     } catch (e) {
       console.log(e)
       return res.status(500).json({ message: 'Download error' })
+    }
+  }
+
+  async deleteFile(req, res) {
+    try {
+      const file = await File.findOne({ _id: req.query.id, user: req.user.id })
+      if (!file) {
+        return res.status(400).json({ message: 'File not found' })
+      }
+      fileService.deleteFile(file)
+      await file.remove()
+      return res.json({ message: 'File was successfully deleted' })
+    } catch (e) {
+      console.log(e)
+      return res.status(400).json({ message: 'Dir is not empty' })
     }
   }
 }

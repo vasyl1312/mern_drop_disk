@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { pushToStack, setCurrentDir } from '../../../../reducers/fileReducer'
 import { deleteFile, downloadFile } from '../../../../actions/file'
 import sizeFormat from '../../../../utils/sizeFormat'
-
 const File = ({ file }) => {
   const dispatch = useDispatch()
   const currentDir = useSelector((state) => state.files.currentDir)
@@ -39,7 +38,6 @@ const File = ({ file }) => {
           download
         </button>
       )}
-
       <button onClick={(e) => deleteClickHandler(e)} className="file__btn file__delete">
         delete
       </button>

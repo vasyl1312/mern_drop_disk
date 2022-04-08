@@ -6,6 +6,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 const FileList = () => {
   const files = useSelector((state) => state.files.files)
+  if (files.length === 0) return <div className="loader">Файлів не знайдено</div>
 
   return (
     <div className="filelist">
@@ -16,7 +17,7 @@ const FileList = () => {
       </div>
       <TransitionGroup>
         {files.map((file) => (
-          <CSSTransition key={file._id} timeout={500} className={'file'} exit={false}>
+          <CSSTransition key={file._id} timeout={500} classNames={'file'} exit={false}>
             <File file={file} />
           </CSSTransition>
         ))}

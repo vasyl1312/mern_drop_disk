@@ -21,6 +21,26 @@
     cursor: pointer;
     margin-left: 10px;
   }
+  &__select {
+    margin-left: auto;
+  }
+  &__list,
+  &__plate {
+    height: 20px;
+    width: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: no-repeat center center;
+    background-size: contain;
+    margin: 0 10px;
+  }
+  &__list {
+    background-image: url('../../assets/img/list.svg');
+  }
+  &__plate {
+    background-image: url('../../assets/img/plate.svg');
+  }
 }
 
 .drop-area {
@@ -69,6 +89,14 @@
     margin: 20px 0px;
   }
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 50px);
+}
+
 .lds-dual-ring {
   display: inline-block;
   width: 80px;
@@ -81,8 +109,8 @@
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
+  border: 6px solid @font-color;
+  border-color: @font-color transparent @font-color transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {

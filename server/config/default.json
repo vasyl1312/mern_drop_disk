@@ -2,5 +2,6 @@
   "serverPort": 5000,
   "dbUrl": "mongodb+srv://vasyl:Vasyl2002@cluster0.1s0to.mongodb.net/mern_drop_disk?retryWrites=true&w=majority",
   "secretKey": "mern-secket-key",
-  "filePath": "D:\\MY PROJECT\\node.js\\nodeCourse\\mern_drop_disk\\server\\files"
+  "filePath": "D:\\MY PROJECT\\node.js\\nodeCourse\\mern_drop_disk\\server\\files",
+  "staticPath": "D:\\MY PROJECT\\node.js\\nodeCourse\\mern_drop_disk\\server\\static"
 }
